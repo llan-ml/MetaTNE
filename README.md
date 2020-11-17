@@ -6,8 +6,7 @@ This repository is the official implementation of MetaTNE in our paper [Node Cla
 
 We recommend first installing [Anaconda3-5.2.0](https://repo.anaconda.com/archive/). Then, run the following commands to install requirements:
 ```
-pip install -U pip && pip uninstall -y numpy && pip install --ignore-installed wrapt numpy==1.17.3 tensorflow-gpu==2.0.0 && pip install networkx==2.2 ray==0.8.3
-
+pip install -U pip && pip uninstall -y numpy && pip install --ignore-installed wrapt numpy==1.17.3 tensorflow-gpu==2.0.0 && pip install networkx==2.2 ray[tune]==0.8.3
 ```
 
 To better understand our code, please familiarize yourself with the usage of [Ray](https://github.com/ray-project/ray) and [Tune](https://github.com/ray-project/ray/tree/master/python/ray/tune).
@@ -25,6 +24,7 @@ python standardize_data.py --data BlogCatalog
 ```
 python run.py --dataset_str BlogCatalog --meta_num_pos_nodes 10 --meta_num_neg_nodes 20
 ```
+You may need to modify [`num_gpus`](run.py#L33) and [`resources_per_trial`](run.py#L49) according to your computing resources.
 
 - Result Analysis
 ```
