@@ -16,17 +16,17 @@ To better understand our code, please familiarize yourself with the usage of [Ra
 You can reproduce the results on BlogCatalog dataset as follows:
 
 - Data Preparation
-```
-python standardize_data.py --data BlogCatalog
-```
+  ```
+  python standardize_data.py --data BlogCatalog
+  ```
 
 - Training and Evaluation
-```
-python run.py --dataset_str BlogCatalog --meta_num_pos_nodes 10 --meta_num_neg_nodes 20
-```
-You may need to modify [`num_gpus`](run.py#L33) and [`resources_per_trial`](run.py#L49) according to your computing resources.
+  ```
+  python run.py --dataset_str BlogCatalog --meta_num_pos_nodes 10 --meta_num_neg_nodes 20
+  ```
+  You may need to modify [`num_gpus`](run.py#L33) and [`resources_per_trial`](run.py#L49) according to your computing resources.
 
 - Result Analysis
-```
-python analysis.py --logdir ~/ray_results/BlogCatalog_10_20
-```
+  ```
+  python analysis.py --logdir ~/ray_results/BlogCatalog_10_20
+  ```
